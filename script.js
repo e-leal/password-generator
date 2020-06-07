@@ -10,34 +10,45 @@ function passwordLength(){
 
 }
 
-function lowercaseLetter(){
+/*function lowercaseLetter(){
   var lowerConfirm = window.prompt('Please choose a lowercase letter to have in your password.');
   if (lowerConfirm === "" || lowerConfirm === null || lowerConfirm.length > 1){
     alert("The character(s) you chose is invalid. Please try again.")
     lowercaseLetter();
   }
   return lowerConfirm.toLowerCase();
+}*/
+function lowercaseLetter(){
+  var letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'g', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  return letter[Math.floor(Math.random()*letter.length)];
 }
 
-function upperCaseLetter(){
+/*function upperCaseLetter(){
   var upperConfirm = window.prompt('Please choose an uppercase letter to have in your password.');
   if(upperConfirm === "" || upperConfirm === null || upperConfirm.length > 1){
     alert("The character(s) you chose is invalid. Please try again.")
     upperCaseLetter();
   }
   return upperConfirm.toUpperCase();
+}*/
+function upperCaseLetter(){
+  var letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'g', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  return letter[Math.floor(Math.random()*letter.length)].toUpperCase();
 }
 
-function getNumber(){
+/*function getNumber(){
   var numberConfirm = window.prompt('Please select a number to have in your password.');
   if(numberConfirm === "" || numberConfirm === null || numberConfirm.length > 1){
     alert("The character(s) you chose is invalid. Please try again.")
     getNumber();
   }
   return parseInt(numberConfirm);
+}*/
+function getNumber(){
+  return Math.floor(Math.random() * 10);
 }
 
-function getSpecial(){
+/*function getSpecial(){
   //var pattern = /[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/;
   var specialConfirm = window.prompt('Please select a special character to have in your password. ( !"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~');
   if(specialConfirm === null || !/[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/g.test(specialConfirm) || specialConfirm.length > 1){
@@ -45,6 +56,11 @@ function getSpecial(){
     getSpecial();
   }
   return specialConfirm;
+}*/
+
+function getSpecial(){
+  var special = ['@', '\\', '!', '#', '$', '^', '%', '^', '+', '=', '-', '[', ']', '\'', ';', '.', '/', '{', '}', '|', '"', ':', '<', '>', '?', '*', '&'];
+  return special[Math.floor(Math.random()*special.length)];
 }
 
 function chooseRandom(lower, upper, specialChar, number){
